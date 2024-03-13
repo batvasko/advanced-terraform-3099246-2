@@ -39,7 +39,7 @@ resource "google_compute_firewall" "default" {
 resource "google_storage_bucket" "environment_buckets" {
   for_each = toset(var.environment_list)
   name = "${lower(each.key)}_${var.project-id}"
-  location = "US"
+  location = "EU"
   versioning {
     enabled = true
   }
