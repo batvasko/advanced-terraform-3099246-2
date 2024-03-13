@@ -51,24 +51,24 @@ resource "google_compute_instance" "web-instances" {
   }
 }
 
-## WEBSERVERS-MAP
-resource "google_compute_instance" "web-map-instances" {
-  for_each = var.environment_instance_settings
-  name = "${lower(each.key)}-web"
-  machine_type = each.value.machine_type
-  labels = each.value.labels
+# ## WEBSERVERS-MAP creates one web server in each environment
+# resource "google_compute_instance" "web-map-instances" {
+#   for_each = var.environment_instance_settings
+#   name = "${lower(each.key)}-web"
+#   machine_type = each.value.machine_type
+#   labels = each.value.labels
 
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-11"
-    }
-  }
+#   boot_disk {
+#     initialize_params {
+#       image = "debian-cloud/debian-11"
+#     }
+#   }
 
-  network_interface {
-    network = data.google_compute_network.default.self_link
-    subnetwork = google_compute_subnetwork.subnet-1.self_link
-  }  
-}
+#   network_interface {
+#     network = data.google_compute_network.default.self_link
+#     subnetwork = google_compute_subnetwork.subnet-1.self_link
+#   }  
+# }
 
 ## DB
 resource "google_compute_instance" "mysqldb" {
