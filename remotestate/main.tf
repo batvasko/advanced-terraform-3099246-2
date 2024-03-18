@@ -7,7 +7,7 @@ provider "google" {
 
 resource "google_storage_bucket" "environment_buckets" {
   name = "remotestate_${var.project-id}"
-  location = "US"
+  location = "EU"
   versioning {
     enabled = true
   }
