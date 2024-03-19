@@ -1,7 +1,7 @@
 ### VARIABLES
 variable "project-id" {
   type = string
-  default = "storied-scarab-408814"
+  # default = "storied-scarab-408814"
 }
 
 variable "org_id" {
@@ -76,4 +76,14 @@ variable "environment_machine_type" {
 
 variable "environment_instance_settings" {
   type = map(any)
+}
+
+variable "vm_instance_template" {
+  description = "Instance template for the managed instance group"
+  # Add other attributes as needed
+}
+
+variable "instance_service_account" {
+  description = "Service account for the managed instance group"
+  # Add any other necessary attributes (type, default value, etc.)
 }
