@@ -37,3 +37,13 @@ variable "qa-main-branch" {
   type = string
   default = "04_06_qa"
 }
+
+variable "region" {
+  type = string
+  default = "europe-central2"
+}
+
+variable "zone" {
+  type = string
+  default = "europe-central2-a"
+}
