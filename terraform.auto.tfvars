@@ -12,26 +12,26 @@ environment_instance_settings = {
       }
     },
    "QA" = {
-      machine_type = "e2-micro"
+      machine_type = "f1-micro"
       labels = {
         environment = "qa"
       },
       redis = {
         name = "customer-id-cache",
         tier = "STANDARD_HA",
-        memory_size_gb = 3,
+        memory_size_gb = 2,
         display_name = "Customer Data Cache"
       }
     },
     "STAGE" = {
-      machine_type = "e2-micro"
+      machine_type = "f1-micro"
       labels = {
         environment = "stage"
       },
       redis = {}
     },
     "PROD" = {
-      machine_type = "e2-medium"
+      machine_type = "e2-micro"
       labels = {
         environment = "prod"
       },

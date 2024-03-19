@@ -1,6 +1,7 @@
 ### VARIABLES
 variable "project-id" {
   type = string
+  default = "storied-scarab-408814"
 }
 
 variable "org_id" {
@@ -11,12 +12,12 @@ variable "org_id" {
 
 variable "region" {
   type = string
-  default = "us-central1"
+  default = "europe-central2"
 }
 
 variable "zone" {
   type = string
-  default = "us-central1-a"
+  default = "europe-central2-a"
 }
 
 variable "subnet-name" {
@@ -26,7 +27,7 @@ variable "subnet-name" {
 
 variable "subnet-cidr" {
   type = string
-  default = "10.127.0.0/20"
+  default = "10.1.0.0/20"
 }
 
 variable "private_google_access" {
@@ -76,4 +77,3 @@ variable "environment_machine_type" {
 variable "environment_instance_settings" {
   type = map(any)
 }
-
