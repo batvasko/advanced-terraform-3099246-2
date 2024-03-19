@@ -1,7 +1,7 @@
 ### VARIABLES
 variable "project-id" {
   type = string
-  default = "storied-scarab-408814"
+  # default = "storied-scarab-408814"
 }
 
 variable "org_id" {
