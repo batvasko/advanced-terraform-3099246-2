@@ -1,6 +1,7 @@
 ### VARIABLES
 variable "project-id" {
   type = string
+  default = "storied-scarab-408814"
 }
 
 variable "org_id" {
@@ -11,12 +12,12 @@ variable "org_id" {
 
 variable "region" {
   type = string
-  default = "us-central1"
+  default = "europe-central2"
 }
 
 variable "zone" {
   type = string
-  default = "us-central1-a"
+  default = "europe-central2-a"
 }
 
 variable "subnet-name" {
@@ -26,7 +27,7 @@ variable "subnet-name" {
 
 variable "subnet-cidr" {
   type = string
-  default = "10.127.0.0/20"
+  default = "10.1.0.0/20"
 }
 
 variable "private_google_access" {
@@ -67,38 +68,12 @@ variable "environment_machine_type" {
   type = map(string)
   default = {
     "DEV" = "f1-micro",
-    "QA" = "e2-micro",
-    "STAGE" = "e2-micro",
-    "PROD" = "e2-medium"
+    "QA" = "f1-micro",
+    "STAGE" = "f1-micro",
+    "PROD" = "e2-micro"
   }
 }
 
 variable "environment_instance_settings" {
-  type = map(object({machine_type=string, labels=map(string)}))
-  default = {
-    "DEV" = {
-      machine_type = "f1-micro"
-      labels = {
-        environment = "dev"
-      }
-    },
-   "QA" = {
-      machine_type = "e2-micro"
-      labels = {
-        environment = "qa"
-      }
-    },
-    "STAGE" = {
-      machine_type = "e2-micro"
-      labels = {
-        environment = "stage"
-      }
-    },
-    "PROD" = {
-      machine_type = "e2-medium"
-      labels = {
-        environment = "prod"
-      }
-    }
-  }
+  type = map(any)
 }
